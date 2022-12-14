@@ -123,7 +123,7 @@ a:nth-of-type(1) {
 
 .anima2::before{
 content:'';
-background-image: url(/assets/image/brush-solid.svg);
+background-image: url(./assets/image/brush-solid.svg);
 height: 100%;
 width: 33px; 
 color: #9d7beb;
