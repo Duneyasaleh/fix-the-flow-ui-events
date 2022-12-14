@@ -7,6 +7,7 @@
   --radius: 0.5rem;
   --pill: 2rem;
   --line: 0.1rem;
+  --svg-design:  url("data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M192 64L160 0H128L96 64 64 0H48C21.5 0 0 21.5 0 48V256H384V48c0-26.5-21.5-48-48-48H224L192 64zM0 288v32c0 35.3 28.7 64 64 64h64v64c0 35.3 28.7 64 64 64s64-28.7 64-64V384h64c35.3 0 64-28.7 64-64V288H0zM192 464c-8.8 0-16-7.2-16-16s7.2-16 16-16s16 7.2 16 16s-7.2 16-16 16z"/></svg>");
 }
 * {
   box-sizing: border-box;
@@ -21,7 +22,7 @@ body {
 section {
   max-width: 90vw;
 }
-a {
+a, span {
   display: inline-block;
   margin: 0.2em;
   padding: 0.4em 0.8em;
@@ -33,14 +34,14 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: var(--primary);
+  /* color: var(--primary); */
   border-color: var(--primary);
 }
 
 /* UI Event Classes */
 
 /* Jump animation on the interaction link */
-a:nth-of-type(12) {
+a:nth-of-type(11) {
   position: relative;
   background: var(--highlight-secondary);
   color: var(--secondary);
@@ -79,3 +80,245 @@ a:nth-of-type(12) {
 }
 
 /* Jouw animaties */
+span {
+  position: relative;
+}
+.anima1{
+border-radius: 0;
+background-color: var(--highlight-primary);
+color: var(--secondary);
+box-shadow: 0 5px 7px 7px solid black;
+border: none;
+padding: 0.5em 1em;
+animation-name: shuin;
+animation-duration: 1.2s;
+animation-iteration-count: 1;
+box-shadow: 19px -1px 19px rgba(0, 0, 0, 0.5) ;
+}
+.anima1 a{
+  background-color: transparent;
+  color: #050840;
+  border: none;
+}
+
+@keyframes shuin {
+  0% {
+    transform: skewX(5deg);
+  }
+  50% {
+    transform: skewX(10deg);
+  }
+  75% {
+    transform: skewX(15deg);
+  }
+  100% {
+    transform: skewX(20deg);
+  }
+
+}
+/* animatie 2 */
+a:nth-of-type(1) {
+  position: relative;
+}
+
+.anima2::before{
+content:'';
+background-image: url(/assets/image/brush-solid.svg);
+height: 100%;
+width: 33px; 
+color: #9d7beb;
+position: absolute;
+background-repeat: no-repeat;
+animation-name: design-brush ;
+animation-duration: 1.2s;
+margin-left: 1em;
+}
+
+.anima2{
+color: transparent;
+
+}
+
+@keyframes design-brush {
+
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(-90deg);
+  }
+  75% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+ 
+
+}
+
+
+/* animatie 3 */
+a:nth-of-type(2) {
+  position: relative;
+}
+.anima3{
+  background-color: var(--highlight-secondary);
+  box-shadow:  5px 0 5px 5px  black;
+  border: none;
+  padding: 0.5em 1em;
+  animation-name: skew;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  }
+  @keyframes skew {
+    0% {
+      transform: skew(3deg, 6deg);
+    }
+    50% {
+      transform: skew(6deg, 3deg);
+    }
+    100% {
+      transform: skew(3deg, 6deg);
+    }
+  }
+    /* animatie 4 */
+    a:nth-of-type(3) {
+      position: relative;
+
+    }
+  .anima4{
+    background-color: orange;
+    border: 10px solid black !important;
+    padding: 0.5em 1em;
+    animation-name: num3 ;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    }
+    @keyframes num3 {
+      50% {
+        transform: scale(1.1);
+      }
+      
+    }
+
+    /* animatie 5 */
+    .anima5{
+      animation-name: fill-color;
+      animation-duration: 2s;
+    }
+    @keyframes fill-color{
+
+      0%{
+        background: linear-gradient(to left, transparent 0%,transparent 32%,transparent 33%,transparent 66%,transparent 67%,transparent 67%,transparent 100%);
+      }
+      25%{
+        background: linear-gradient(to left, transparent 0%,transparent 32%,transparent 33%,transparent 66%,transparent 67%,#3056ff 67%,#3056ff 100%);
+      }
+      50%{
+        background: linear-gradient(to left, transparent 0%,transparent 32%,transparent 33%,#3056ff 66%,#3056ff 67%,#3056ff 67%,#3056ff 100%);
+      }
+      75%{
+        background: linear-gradient(to left, transparent 0%,#3056ff 32%,#3056ff 33%,#3056ff 66%,#3056ff 67%,#3056ff 67%,#3056ff 100%);
+      }
+      100%{
+        background: linear-gradient(to left, #3056ff 0%,#3056ff 32%,#3056ff 33%,#3056ff 66%,#3056ff 67%,#3056ff 67%,#3056ff 100%);
+      
+    }
+  }
+
+    /* animatie 6 */
+
+    .anima6{
+      animation-name: roll;
+      animation-duration: 2s;
+      background-color: var(--highlight-primary);
+      color: var(--highlight-secondary);
+    }
+    @keyframes roll{
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+      /* animatie 7 */
+     .anima7{
+      background-color: hotpink;
+      animation-name: text-line;
+      animation-duration: 1.3s;
+     }
+
+     @keyframes text-line{
+      0%{
+        line-height: 1.2em;
+        font-size: 10pt;
+      }
+      40%{
+        line-height: 1.5em;
+        font-size: 15pt;
+        }
+      80%{
+        line-height: 2em;
+        font-size: 20pt;
+        }
+      100%{
+        line-height: 2.5em;
+        font-size: 25pt;
+         }
+     }
+
+      /* animatie 8 */
+    .anima8{
+      animation-name: flip-zij;
+      animation-duration: 2s;
+      box-shadow:  0px 0px 34px hotpink;
+    }
+
+    @keyframes flip-zij{
+    0%{
+      transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+    50%{
+      transform: perspective(200px) rotateX(-20deg) rotateY(-20deg);
+    }
+    100%{
+      transform: perspective(200px) rotateX(20deg) rotateY(20deg);
+    }
+    }
+      /* animatie 9 */
+     .anima9{
+      clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+      border-radius: 0;
+      border-color: palegreen ;
+      animation-name: border;
+      animation-duration: 2s;
+      color: #9d7beb;
+     }
+     @keyframes border{
+
+      0%{
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+      }
+      0%{
+        clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
+      }
+     }
+      /* animatie 10 */
+      a:nth-of-type(9){
+        background-color: var(--highlight-primary);
+        color: rgb(145, 141, 97);
+      }
+
+    .anima10{
+      animation-name: flip-top;
+      animation-duration: 2s;
+    }
+    @keyframes flip-top{
+      50%{
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        background-color: #3056ff;
+      }
+    }
